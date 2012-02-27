@@ -91,33 +91,26 @@
 
        return this.each(function(){
 
-         var $this = $(this);
-         
          // Remove the onKeyDown, OnKeyUp form the inputs
          $(window).unbind('.autofiller');
          
-         // ToDo: retach any other events that might be removed.
-         $('#hd_'+$this.attr('id')).remove();
+         // TODO: retach any other events that might be removed.
+         $('#hd_'+$(this).attr('id')).remove();
 
-         // data = $this.data('tooltip');
-
-         //data.tooltip.remove();
-         //$this.removeData('tooltip');
+         // TODO: Remove the data. $this.removeData('autofiller');
        })
 
      }
   };
 
   $.fn.autofill = function( method ) {
-    
     if ( methods[method] ) {
       return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
     } else if ( typeof method === 'object' || ! method ) {
       return methods.init.apply( this, arguments );
     } else {
-      $.error( 'Method ' +  method + ' does not exist on jQuery.AutoFill' );
+      $.error( 'Method ' +  method + ' does not exist on jQuery.AutoFiller' );
     }    
-  
   };
 
 })( jQuery );
