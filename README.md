@@ -14,6 +14,39 @@ This project is a plugin for jQuery that makes simple form inputs into google-li
       onrender  : true
     });
 
+### Custom Callbacks
+You will want to write your own callbacks for the onKeyDown and OnKeyUp events. This plugin does not handle ajax callbacks for recommendations, yet. Best usage is to write a recommendation function that uses the user input to build the background input. 
+
+    /* Custom Callback for OnKeyDown event. */
+    function customCallbackforKeyDown(event) { 
+
+      console.log('IN Key down');
+
+      if (event.keyCode == '9') { 
+         $(this).val(  $('#hd_'+$(this).attr('id')).val() );
+      }         
+    }
+    
+    /* Custom Callback for OnKeyUp event. */
+    function customCallbackforKeyUp(event) { 
+
+      console.log('In Custom Key Up: ' + event.keyCode + ' ' + $(this).attr('id') );
+
+      /* Calls a function that uses regex to match and set a look ahead value.
+      
+         Example: Input: '1' will recommend 1:00 AM, 
+         Example: Input: '12:' will recommdn 12:00 AM
+      */
+      var rec = recommendTime($(this).val());
+    
+      // Log the recommendation to the console to help. 
+      console.log(rec);
+      $('#hd_'+$(this).attr('id')).val(rec);     
+    }
+
+### Debugging
+While testing or writing your recommendation code do not use alerts(), as they will cause issues with the input events. Use the console to see how your functions are working. Additionally add the 'debug' flag to your input options. This will tell the plugin to output a bit more information.
+
 ### Options:
 
 * wrapper : (Optional) Enter a class name for the wrapper div.
