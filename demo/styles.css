@@ -1,0 +1,38 @@
+body { 
+  background-color: #EFEFEF; 
+  font-size: 12px; 
+  font-family: arial; 
+}
+
+p { font-size: 12px; }
+
+.desc { 
+  font-size: 11px;
+  margin: 3px 0px 10px 0px;
+  font-style:italic;
+  color: silver;
+}
+
+.code { 
+  font-size: 11px;
+  margin: 3px 0px 10px 0px;
+  font-style:italic;
+  color: #000;
+  background-color: #EFEFEF;
+  padding: 10px;
+  line-height: 16px;
+}
+
+.container {
+  border:1px solid #000; 
+  width: 700px; margin: auto;
+  padding: 20px; 
+  min-height: 700px;
+  background-color: #FFF;
+}
+
+.demo { 
+  border:1px solid #000; 
+  width: 500px; margin: auto;
+  padding: 20px; 
+}

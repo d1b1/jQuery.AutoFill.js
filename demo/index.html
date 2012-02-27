@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+	<title>jQuery Auto Fill Demo</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">google.load("jquery", "1.7.1");</script>
+
+  <script type="text/javascript" src="../../js/composer_lib.js"></script>
+  <script type="text/javascript" src="../jquery.autofill.js"></script>
+  
+  <script>
+  
+  /* Custom Callback for OnKeyDown event. */
+  function customCallbackforKeyDown(event) { 
+
+    // Dump the keyCode to the console.
+    console.log('IN Key down');
+     
+    // Tab will move the code to the primary input. 
+    if (event.keyCode == '9') { 
+      $(this).val(  $('#hd_'+$(this).attr('id')).val() );
+    }
+              
+  }
+  
+  /* Custom Callback for OnKeyUp event. */
+  function customCallbackforKeyUp(event) { 
+
+    console.log('In Custom Key Up: ' + event.keyCode + ' ' + $(this).attr('id') );
+
+    var rec = recommendTime($(this).val());
+    
+    console.log(rec);
+    $('#hd_'+$(this).attr('id')).val(rec);     
+  }
+  
+  $(document).ready( function() {
+
+    $('#firstname').autofill();
+    
+    // No Defaults, let the plugin handle things.
+    $('#start_time_1').autofill();
+    
+
+    $('#start_time_2').autofill({
+      onkeydown : 'customCallbackforKeyDown',
+      onkeyup   : 'customCallbackforKeyUp',
+      wrapper   : 'mywrapper',
+      onrender  : true
+    });
+   
+  });
+  </script>
+
+  <style>
+
+  .mywrapper { position: relative; padding: 0px 5px 0px 5px; width: 200px; height: 33px; border: 1px solid #000; }
+
+  .mywrapper input { font-size: 20px; width: 200px; height: 23px; left: 0px; margin: 4px; border:0px solid #EFEFEF; }
+  
+  .wrapper { position: relative; width: 250px; padding: 0px 0px 0px 0px; height: 22px; border:1px solid #000; }
+  .primary_input {
+    left: 0px; 
+    padding: 0px;
+    margin: 0px; 
+    width: 100px; 
+    position: absolute; 
+    background-color: transparent; 
+    z-index: 5; 
+    color: #000; 
+  }
+     
+  .hidden_input { 
+    padding: 0px;
+    margin: 0px;
+    position: absolute; 
+    width: 100px; 
+    z-index: 0; 
+    background-color: transparent; 
+    -webkit-text-fill-color: silver; 
+    color: silver; 
+    text-align: left;
+  }
+ 
+</style>
+ 
+</head>
+<body>
+
+<div class="container">
+<div class="demo">
+
+  <h2>jQuery.AutoFill()</h2>
+  
+  <p>
+  This plugin provides google-like autofill features for form input elements. The following
+  examples assumes the user will enter times. Start typing 1.. and the plugin will show you
+  recommendations. Use the <b>tab</b> to select the recommendation.
+  </p>
+  
+  <label>Start Time (default CSS):</label>
+  <input id="start_time_1" name="aname" type="text" autocomplete="off" value="" dir="ltr" spellcheck="false" lang="en">
+
+  <p class="desc">
+  Using default wrapper element for the inputs. The plugin will put a div wrapper around
+  the initial input element and the secondary (hidden) input.
+  </p>
+  
+  <label>Start Time (with custom CSS):</label>
+  <input id="start_time_2" value="12" name="aname" type="text" autocomplete="off" value="" dir="ltr" spellcheck="false" lang="en">
+
+  <p class="desc">
+  Using a CSS class .mywrapper to define the wrapper. Pass this in to the individual .autofill() using the parameters.
+  </p>
+  
+  <p class="code">
+    $('#start_time_2').autofill({<br>
+    &nbsp;&nbsp;'onkeydown' : 'customCallbackforKeyDown',<br>
+    &nbsp;&nbsp;'onkeyup'   : 'customCallbackforKeyUp',<br>
+    &nbsp;&nbsp;'wrapper'   : 'mywrapper'<br>
+    &nbsp;&nbsp;'onrender'  : true<br>
+    });<br>
+    
+  </p>
+
+    
+    <h2>Options</h2>
+    
+    <ul>
+      <li>wrapper : (Optional) Enter a class name for the wrapper div.</li>
+      <li>onkeydown : (Optional) Define a custom callback for the input.onkeydown event.</li>
+      <li>onkeyup : (Optional) Define a custom callback for the input.onkeyup event.</li>
+      <li>autodestroy : (Default: false) This is an experimental feature that will destroy
+      the autofill input fields when focus is lost. This ensures that the form will not post
+      with extra fields.
+      </li>
+    </ul>
+
+</div>
+
+
+
+
+</div>
+
+</body>
+</html>
