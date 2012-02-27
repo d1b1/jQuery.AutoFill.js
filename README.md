@@ -1,6 +1,8 @@
 jQuery.AutoFill.js
 =============
 
+![](http://github.com/d1b1/jQuery.AutoFill.js/blob/master/img/foo.png) 
+
 This project is a plugin for jQuery that makes simple form inputs into google-like autofill features that we all see on the google search page.
 
 ### Simple:
