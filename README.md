@@ -47,14 +47,15 @@ Custom Input.OnKeyUp Event Function
     }
 
 ### Debugging
-While testing or writing your recommendation code do not use alerts(), as they will cause issues with the input events. Use the console to see how your functions are working. Additionally add the 'debug' flag to your input options. This will tell the plugin to output a bit more information.
+While testing or writing your recommendation code do not use alerts(), as they will cause issues with the input events. Use the console to see how your functions are working. Additionally add the `debug` flag to your input options. This will tell the plugin to output a bit more information.
 
 ### Options:
 
-* wrapper : (Optional) Enter a class name for the wrapper div.
-* onkeydown : (Optional) Define a custom callback for the input.onkeydown event.
-* onkeyup : (Optional) Define a custom callback for the input.onkeyup event.
-* autodestroy : (Default: false) This is an experimental feature that will destroy the autofill input fields when focus is lost. This ensures that the form will not post with extra fields.
+* `wrapper` : (Optional) Enter a class name for the wrapper div.
+* `onkeydown` : (Optional) Define a custom callback for the input.onkeydown event.
+* `onkeyup` : (Optional) Define a custom callback for the input.onkeyup event.
+* `autodestroy` : (Default: false) This is an experimental feature that will destroy the autofill input fields when focus is lost. This ensures that the form will not post with extra fields.
+* `debug` : (Optional) Lets the plugin dump out debug information to the console.
 
 ----
 Demo attached. Test are coming along.
