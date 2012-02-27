@@ -20,9 +20,7 @@ You will want to write your own callbacks for the onKeyDown and OnKeyUp events. 
 Custom Input.OnKeyDown Event Function
 
     function customCallbackforKeyDown(event) { 
-
       console.log('IN Key down');
-
       if (event.keyCode == '9') { 
          $(this).val(  $('#hd_'+$(this).attr('id')).val() );
       }         
@@ -31,7 +29,6 @@ Custom Input.OnKeyDown Event Function
 Custom Input.OnKeyUp Event Function
 
     function customCallbackforKeyUp(event) { 
-
       console.log('In Custom Key Up: ' + event.keyCode + ' ' + $(this).attr('id') );
 
       /* Calls a function that uses regex to match and set a look ahead value.
