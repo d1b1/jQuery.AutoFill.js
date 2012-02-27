@@ -3,6 +3,11 @@ jQuery.AutoFill.js
 
 This project is a plugin for jQuery that makes simple form inputs into google-like autofill features that we all see on the google search page.
 
+### Form Element
+
+  <label>Start Time (default CSS):</label>
+  <input id="start_time_1" name="stime" type="text" autocomplete="off" value="" dir="ltr" spellcheck="false" lang="en">
+
 ### Simple:
     $('#start_time_1').autofill();
 
