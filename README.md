@@ -14,4 +14,12 @@ This project is a plugin for jQuery that makes simple form inputs into google-li
       onrender  : true
     });
 
-Demo attached.
+### Options:
+
+* wrapper : (Optional) Enter a class name for the wrapper div.
+* onkeydown : (Optional) Define a custom callback for the input.onkeydown event.
+* onkeyup : (Optional) Define a custom callback for the input.onkeyup event.
+* autodestroy : (Default: false) This is an experimental feature that will destroy the autofill input fields when focus is lost. This ensures that the form will not post with extra fields.
+
+----
+Demo attached. Test are coming along.
