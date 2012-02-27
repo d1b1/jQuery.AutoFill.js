@@ -17,7 +17,8 @@ This project is a plugin for jQuery that makes simple form inputs into google-li
 ### Custom Callbacks
 You will want to write your own callbacks for the onKeyDown and OnKeyUp events. This plugin does not handle ajax callbacks for recommendations, yet. Best usage is to write a recommendation function that uses the user input to build the background input. 
 
-    /* Custom Callback for OnKeyDown event. */
+Custom Input.OnKeyDown Event Function
+
     function customCallbackforKeyDown(event) { 
 
       console.log('IN Key down');
@@ -26,8 +27,9 @@ You will want to write your own callbacks for the onKeyDown and OnKeyUp events. 
          $(this).val(  $('#hd_'+$(this).attr('id')).val() );
       }         
     }
-    
-    /* Custom Callback for OnKeyUp event. */
+
+Custom Input.OnKeyUp Event Function
+
     function customCallbackforKeyUp(event) { 
 
       console.log('In Custom Key Up: ' + event.keyCode + ' ' + $(this).attr('id') );
