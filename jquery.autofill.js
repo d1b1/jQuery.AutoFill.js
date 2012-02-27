@@ -2,7 +2,10 @@
  * jQuery.AutoFill.js: Input Autofill feature - v0.1 2/27/2012
  * 
  * Copyright (c) 2012 Stephan Smith
- * Dual licensed under the MIT license.
+ *
+ * Licensed under the MIT license.
+ *
+ * v0.0 - Not 100% ready for production. Still in testing.
  *
  */
  
