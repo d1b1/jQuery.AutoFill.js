@@ -103,6 +103,7 @@
                 
                 // Only fire the recommendor when defined.
                 if (settings.recommender) {
+                  // TODO: Oops need to change this to use the defined code for recommendations.
                   var rec = recommendTime( $(this).val() );
                   
                   $(this).siblings('.autofill').val(rec);
