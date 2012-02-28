@@ -42,14 +42,14 @@
     $('#firstname').autofill();
     
     // No Defaults, let the plugin handle things.
-    $('#start_time_1').autofill( { recommendor : 'recommendTime' });
+    $('#start_time_1').autofill({ recommender : 'recommendTime' });
     
     $('#start_time_2').autofill({
       onkeydown : 'customCallbackforKeyDown',
       onkeyup   : 'customCallbackforKeyUp',
       wrapper   : 'mywrapper',
       onrender  : true,
-      recommendor : 'recommendTime'
+      recommender : 'recommendTime'
     });
    
   });
