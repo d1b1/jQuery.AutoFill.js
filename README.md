@@ -10,10 +10,11 @@ This project is a plugin for jQuery that makes simple form inputs into google-li
 
 ### With Custom Class and Callbacks:
     $('#start_time_2').autofill({
-      onkeydown : 'customCallbackforKeyDown',
-      onkeyup   : 'customCallbackforKeyUp',
-      wrapper   : 'mywrapper',
-      onrender  : true
+      onkeydown   : 'customCallbackforKeyDown',
+      onkeyup     : 'customCallbackforKeyUp',
+      wrapper     : 'mywrapper',
+      onrender    : true,
+      recommender : ''
     });
 
 ### Custom Callbacks
@@ -50,6 +51,8 @@ While testing or writing your recommendation code do not use alerts(), as they w
 
 ### Options:
 
+* `recommender` : Required - name of function that will return a recommended value to the auto fill element.
+* `inputclass`  : Optional - Class name for the input element.
 * `wrapper` : (Optional) Enter a class name for the wrapper div.
 * `onkeydown` : (Optional) Define a custom callback for the input.onkeydown event.
 * `onkeyup` : (Optional) Define a custom callback for the input.onkeyup event.

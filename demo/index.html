@@ -21,7 +21,7 @@
      
     // Tab will move the code to the primary input. 
     if (event.keyCode == '9') { 
-      $(this).val(  $('#hd_'+$(this).attr('id')).val() );
+      $(this).val(  $(this).siblings('.autofill').val() );
     }
               
   }
@@ -33,8 +33,8 @@
 
     var rec = recommendTime($(this).val());
     
-    console.log(rec);
-    $('#hd_'+$(this).attr('id')).val(rec);     
+    console.log(rec); 
+    $(this).siblings('.autofill').val(rec);     
   }
   
   $(document).ready( function() {
@@ -49,7 +49,8 @@
       onkeydown : 'customCallbackforKeyDown',
       onkeyup   : 'customCallbackforKeyUp',
       wrapper   : 'mywrapper',
-      onrender  : true
+      onrender  : true,
+      recommendor : 'recommendTime'
     });
    
   });
@@ -123,21 +124,21 @@
     &nbsp;&nbsp;'wrapper'   : 'mywrapper'<br>
     &nbsp;&nbsp;'onrender'  : true<br>
     });<br>
-    
   </p>
 
-    
-    <h2>Options</h2>
-    
-    <ul>
-      <li>wrapper : (Optional) Enter a class name for the wrapper div.</li>
-      <li>onkeydown : (Optional) Define a custom callback for the input.onkeydown event.</li>
-      <li>onkeyup : (Optional) Define a custom callback for the input.onkeyup event.</li>
-      <li>autodestroy : (Default: false) This is an experimental feature that will destroy
-      the autofill input fields when focus is lost. This ensures that the form will not post
-      with extra fields.
-      </li>
-    </ul>
+  <h2>Options</h2>
+  
+  <ul>
+    <li>wrapper : (Optional) Enter a class name for the wrapper div.</li>
+    <li>recommender : Named function that will provide the auto fill recommendation.</li>
+    <li>inputclass : Class name for the input element.</li>
+    <li>onkeydown : (Optional) Define a custom callback for the input.onkeydown event.</li>
+    <li>onkeyup : (Optional) Define a custom callback for the input.onkeyup event.</li>
+    <li>autodestroy : (Default: false) This is an experimental feature that will destroy
+    the autofill input fields when focus is lost. This ensures that the form will not post
+    with extra fields.
+    </li>
+  </ul>
 
 </div>
 
