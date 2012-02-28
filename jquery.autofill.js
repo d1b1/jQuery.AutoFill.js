@@ -134,6 +134,9 @@
 
        return this.each(function(){
 
+         var $this = $(this),
+             data = $this.data('autofiller');
+             
          // Remove the onKeyDown, OnKeyUp form the inputs
          $(window).unbind('.autofiller');
          
@@ -141,7 +144,8 @@
          //$('#hd_'+$(this).attr('id')).remove();
          $(this).siblings('.autofill').remove();
 
-         // TODO: Remove the data. $this.removeData('autofiller');
+         data.autofiller.remove();
+         $this.removeData('autofiller');
        })
 
      }
